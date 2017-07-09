@@ -1,0 +1,10 @@
+.remote_images,
+.show_from,
+.show_images {
+	color: #555555;
+}
+
+.show_from:active,
+.show_images:active {
+	color: white;
+}

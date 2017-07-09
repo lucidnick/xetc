@@ -1,0 +1,6 @@
+Explanation: OS patches for Zorin OS.
+Explanation: We need this pin because our patched build can lag a few hours behind Ubuntu's updates,
+Explanation: and during those few hours packages can be overwritten with unpatched ones.
+Package: *
+Pin: release o=LP-PPA-zorinos-patches
+Pin-Priority: 999

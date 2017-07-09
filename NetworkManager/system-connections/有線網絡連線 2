@@ -1,0 +1,23 @@
+[connection]
+id=有線網絡連線 2
+uuid=00680b08-72de-3ea1-8292-ac0d87059f5c
+type=ethernet
+autoconnect-priority=-999
+permissions=
+secondaries=
+timestamp=1495678019
+
+[ethernet]
+duplex=full
+mac-address=20:6A:8A:50:7D:8E
+mac-address-blacklist=
+
+[ipv4]
+dns-search=
+method=auto
+
+[ipv6]
+addr-gen-mode=stable-privacy
+dns-search=
+ip6-privacy=0
+method=auto

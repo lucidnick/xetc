@@ -1,0 +1,26 @@
+#!/bin/bash
+# Send an "I am alive" ping to the Zorin OS developers. This is used for
+# counting the number of Zorin OS users. Note that this does not send any
+# personal data; it only transmits the operating system version, the number of
+# user accounts and the city & country the user is in.
+#
+# (C) 2016 Zorin OS Technologies Ltd.
+# License: GPL v2 or later
+
+census_dir=/var/lib/zorin-os-census
+mkdir -p $census_dir
+if [ -f $census_dir/uuid ];
+then
+   id=$(cat $census_dir/uuid)
+else
+   id=""
+fi
+usercount=$(awk -F'[/:]' '{if ($3 >= 1000 && $3 != 65534) print $1}' /etc/passwd | wc -l)
+version=$(lsb_release -rs)
+res=$(curl -s -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"id":"'"$id"'","usercount":'"$usercount"',"version":"'$version'"}' https://census.zorinos.com/submit)
+case $res in
+    ID:*)
+        id=${res#ID:}
+        echo $id > $census_dir/uuid
+    ;;
+esac

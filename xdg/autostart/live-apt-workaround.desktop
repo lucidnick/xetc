@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Live Apt Workaround
+Type=Application
+Exec=live-apt-workaround
+Terminal=false
+Comment=Workaround for CD Apt issue
+Categories=Utility;

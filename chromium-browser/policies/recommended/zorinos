@@ -1,0 +1,4 @@
+﻿{
+	"RestoreOnStartup" : 4,
+	"RestoreOnStartupURLs" : ["http://zorinos.com/start"]
+}
