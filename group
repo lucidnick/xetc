@@ -68,3 +68,6 @@ sambashare:x:128:root
 hel:x:1002:
 hel2:x:1004:
 hello:x:1000:
+lightdm:x:129:
+nopasswdlogin:x:130:
+ntp:x:131:

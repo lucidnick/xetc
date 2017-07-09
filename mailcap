@@ -142,6 +142,31 @@ video/x-ms-wmx; /usr/bin/gnome-mplayer %s; description="Audio Video Interleave -
 video/x-ms-wvx; /usr/bin/gnome-mplayer %s; description="Audio Video Interleave - Microsoft"; test=test -n "$DISPLAY"
 video/x-msvideo; /usr/bin/gnome-mplayer %s; description="Audio Video Interleave - Microsoft"; test=test -n "$DISPLAY"
 video/x-quicktime; /usr/bin/gnome-mplayer %s; description="Apple Quicktime Video"; test=test -n "$DISPLAY"
+application/x-gnumeric; gnumeric '%s'; edit=gnumeric '%s'; compose=gnumeric '%s'; description="Gnumeric spreadsheet"; test=test -n "$DISPLAY"; nametemplate=%s.gnumeric
+text/csv; gnumeric '%s'; edit=gnumeric '%s'; description="Comma Separated Values"; test=test -n "$DISPLAY"; nametemplate=%s.csv
+application/vnd.ms-excel; gnumeric '%s'; edit=gnumeric '%s'; description="MS Excel spreadsheet"; test=test -n "$DISPLAY"; nametemplate=%s.xls
+application/x-excel; gnumeric '%s'; edit=gnumeric '%s'; description="MS Excel spreadsheet"; test=test -n "$DISPLAY"; nametemplate=%s.xls
+application/x-ms-excel; gnumeric '%s'; edit=gnumeric '%s'; description="MS Excel spreadsheet"; test=test -n "$DISPLAY"; nametemplate=%s.xls
+application/x-msexcel; gnumeric '%s'; edit=gnumeric '%s'; description="MS Excel spreadsheet"; test=test -n "$DISPLAY"; nametemplate=%s.xls
+application/x-xls; gnumeric '%s'; edit=gnumeric '%s'; description="MS Excel spreadsheet"; test=test -n "$DISPLAY"; nametemplate=%s.xls
+application/x-dos_ms_excel; gnumeric '%s'; edit=gnumeric '%s'; description="MS Excel spreadsheet"; test=test -n "$DISPLAY"; nametemplate=%s.xls
+zz-application/zz-winassoc-xls; gnumeric '%s'; edit=gnumeric '%s'; description="MS Excel spreadsheet"; test=test -n "$DISPLAY"; nametemplate=%s.xls
+application/vnd.sun.xml.calc; gnumeric '%s'; edit=gnumeric '%s'; description="OpenOffice.org Calc spreadsheet"; test=test -n "$DISPLAY"; nametemplate=%s.sxc
+application/vnd.sun.xml.calc.template; gnumeric '%s'; edit=gnumeric '%s'; description="OpenOffice.org Calc spreadsheet template"; test=test -n "$DISPLAY"; nametemplate=%s.stc
+application/x-applix; gnumeric '%s'; edit=gnumeric '%s'; description="Applixware Spreadsheets file"; test=test -n "$DISPLAY"; nametemplate=%s.as
+application/x-applix-spreadsheet; gnumeric '%s'; edit=gnumeric '%s'; description="Applixware Spreadsheets file"; test=test -n "$DISPLAY"; nametemplate=%s.as
+application/vnd.lotus-1-2-3; gnumeric '%s'; edit=gnumeric '%s'; description="Lotus 1-2-3 spreadsheet"; test=test -n "$DISPLAY"; nametemplate=%s.xls
+application/x-123; gnumeric '%s'; edit=gnumeric '%s'; description="Lotus 1-2-3 spreadsheet"; test=test -n "$DISPLAY"; nametemplate=%s.xls
+text/tab-separated-values; gnumeric '%s'; edit=gnumeric '%s'; description="Tab separated values"; test=test -n "$DISPLAY"; nametemplate=%s.tsv
+application/x-mps; gnumeric '%s'; edit=gnumeric '%s'; description="MPS (Mathematical Programming System) linear programming file"; test=test -n "$DISPLAY"; nametemplate=%s.mps
+application/x-oleo; gnumeric '%s'; edit=gnumeric '%s'; description="GNU Oleo spreadsheet"; test=test -n "$DISPLAY"; nametemplate=%s.oleo
+application/x-planperfect; gnumeric '%s'; edit=gnumeric '%s'; description="PlanPerfect spreadsheet"; test=test -n "$DISPLAY"; nametemplate=%s.pln
+application/x-quattropro; gnumeric '%s'; edit=gnumeric '%s'; description="Quattro Pro spreadsheet"; test=test -n "$DISPLAY"; nametemplate=%s.wb1
+application/x-sc; gnumeric '%s'; edit=gnumeric '%s'; description="SC/XSpread spreadsheet"; test=test -n "$DISPLAY"; nametemplate=%s.sc
+application/x-sylk; gnumeric '%s'; edit=gnumeric '%s'; description="Multiplan SYLK spreadsheet"; test=test -n "$DISPLAY"; nametemplate=%s.slk
+application/x-xbase; gnumeric '%s'; edit=gnumeric '%s'; description="Xbase spreadsheet"; test=test -n "$DISPLAY"; nametemplate=%s.dbf
+application/x-lpsolve; gnumeric '%s'; edit=gnumeric '%s'; description="LPSolve Linear Program Solver"; test=test -n "$DISPLAY"; nametemplate=%s.lp
+application/vnd.oasis.opendocument.spreadsheet; gnumeric '%s'; edit=gnumeric '%s'; description="OpenDocument Spreadsheet"; test=test -n "$DISPLAY"; nametemplate=%s.ods
 application/x-troff-man; /usr/bin/nroff -mandoc -Tutf8; copiousoutput; print=/usr/bin/nroff -mandoc -Tutf8 | print text/plain:-
 text/troff; /usr/bin/nroff -mandoc -Tutf8; copiousoutput; print=/usr/bin/nroff -mandoc -Tutf8 | print text/plain:-
 application/x-info; /usr/bin/info -f '%s'; needsterminal; description=GNU Info document
@@ -205,6 +230,7 @@ audio/x-mpeg; rhythmbox '%s'; description="MP3 audio"; test=test -n "$DISPLAY"
 audio/mpeg; rhythmbox '%s'; description="MP3 audio"; test=test -n "$DISPLAY"
 audio/x-mpegurl; rhythmbox '%s'; description="Playlist"; test=test -n "$DISPLAY"; nametemplate=%s.m3u
 application/x-flac; rhythmbox '%s'; description="FLAC audio"; test=test -n "$DISPLAY"; nametemplate=%s.flac
+application/x-bittorrent; transmission-gtk %s; description="GTK-based BitTorrent client"; test=test -n "$DISPLAY"
 text/plain; more %s; needsterminal
 application/x-ms-dos-executable; /usr/bin/cautious-launcher '%s' /usr/bin/wine ; description=Windows Executable
 application/x-msi; /usr/bin/cautious-launcher '%s' /usr/bin/wine ; description=Windows Installer archive
@@ -227,6 +253,34 @@ application/x-xz; /usr/bin/xarchiver -- '%s'; edit=/usr/bin/xarchiver -- '%s'; d
 application/x-xz-compressed-tar; /usr/bin/xarchiver -- '%s'; edit=/usr/bin/xarchiver -- '%s'; description="XZ compressed tar file"; test=test -n "$DISPLAY"
 text/x-apport; /usr/share/apport/apport-gtk -c %s; test=test -n "$DISPLAY"
 x-scheme-handler/apt; apturl %s; test=test -n "$DISPLAY"
+application/ogg; audacious %s; test=test -n "$DISPLAY"
+application/x-cue; audacious %s; test=test -n "$DISPLAY"
+application/x-ogg; audacious %s; test=test -n "$DISPLAY"
+application/xspf+xml; audacious %s; test=test -n "$DISPLAY"
+audio/midi; audacious %s; test=test -n "$DISPLAY"
+audio/mp3; audacious %s; test=test -n "$DISPLAY"
+audio/mp4; audacious %s; test=test -n "$DISPLAY"
+audio/mpeg; audacious %s; test=test -n "$DISPLAY"
+audio/mpegurl; audacious %s; test=test -n "$DISPLAY"
+audio/ogg; audacious %s; test=test -n "$DISPLAY"
+audio/prs.sid; audacious %s; test=test -n "$DISPLAY"
+audio/x-flac; audacious %s; test=test -n "$DISPLAY"
+audio/x-it; audacious %s; test=test -n "$DISPLAY"
+audio/x-mod; audacious %s; test=test -n "$DISPLAY"
+audio/x-mp3; audacious %s; test=test -n "$DISPLAY"
+audio/x-mpeg; audacious %s; test=test -n "$DISPLAY"
+audio/x-mpegurl; audacious %s; test=test -n "$DISPLAY"
+audio/x-ms-asx; audacious %s; test=test -n "$DISPLAY"
+audio/x-ms-wma; audacious %s; test=test -n "$DISPLAY"
+audio/x-musepack; audacious %s; test=test -n "$DISPLAY"
+audio/x-s3m; audacious %s; test=test -n "$DISPLAY"
+audio/x-scpls; audacious %s; test=test -n "$DISPLAY"
+audio/x-stm; audacious %s; test=test -n "$DISPLAY"
+audio/x-vorbis+ogg; audacious %s; test=test -n "$DISPLAY"
+audio/x-wav; audacious %s; test=test -n "$DISPLAY"
+audio/x-xm; audacious %s; test=test -n "$DISPLAY"
+inode/directory; audacious %s; test=test -n "$DISPLAY"
+x-content/audio-cdda; audacious %s; test=test -n "$DISPLAY"
 x-content/blank-cd; nautilus --no-default-window --no-desktop burn:///  %s; test=test -n "$DISPLAY"
 x-content/blank-dvd; nautilus --no-default-window --no-desktop burn:///  %s; test=test -n "$DISPLAY"
 x-content/blank-bd; nautilus --no-default-window --no-desktop burn:///  %s; test=test -n "$DISPLAY"
@@ -336,6 +390,21 @@ application/x-ext-cbt; evince-previewer %s; test=test -n "$DISPLAY"
 application/oxps; evince-previewer %s; test=test -n "$DISPLAY"
 application/vnd.ms-xpsdocument; evince-previewer %s; test=test -n "$DISPLAY"
 application/x-fskin; fcitx-skin-installer %s; test=test -n "$DISPLAY"
+text/html; firefox -private-window %s; test=test -n "$DISPLAY"
+text/xml; firefox -private-window %s; test=test -n "$DISPLAY"
+application/xhtml+xml; firefox -private-window %s; test=test -n "$DISPLAY"
+application/xml; firefox -private-window %s; test=test -n "$DISPLAY"
+application/rss+xml; firefox -private-window %s; test=test -n "$DISPLAY"
+application/rdf+xml; firefox -private-window %s; test=test -n "$DISPLAY"
+image/gif; firefox -private-window %s; test=test -n "$DISPLAY"
+image/jpeg; firefox -private-window %s; test=test -n "$DISPLAY"
+image/png; firefox -private-window %s; test=test -n "$DISPLAY"
+x-scheme-handler/http; firefox -private-window %s; test=test -n "$DISPLAY"
+x-scheme-handler/https; firefox -private-window %s; test=test -n "$DISPLAY"
+x-scheme-handler/ftp; firefox -private-window %s; test=test -n "$DISPLAY"
+x-scheme-handler/chrome; firefox -private-window %s; test=test -n "$DISPLAY"
+video/webm; firefox -private-window %s; test=test -n "$DISPLAY"
+application/x-xpinstall; firefox -private-window %s; test=test -n "$DISPLAY"
 application/vnd.iccprofile; /usr/bin/gcm-import %s; test=test -n "$DISPLAY"
 application/pkcs12; /usr/bin/gcr-viewer %s; test=test -n "$DISPLAY"
 application/pkcs12+pem; /usr/bin/gcr-viewer %s; test=test -n "$DISPLAY"
@@ -357,6 +426,7 @@ application/pkcs10; /usr/bin/gcr-viewer %s; test=test -n "$DISPLAY"
 application/pkcs10+pem; /usr/bin/gcr-viewer %s; test=test -n "$DISPLAY"
 application/x-spkac; /usr/bin/gcr-viewer %s; test=test -n "$DISPLAY"
 application/x-spkac+base64; /usr/bin/gcr-viewer %s; test=test -n "$DISPLAY"
+application/vnd.debian.binary-package; gdebi-gtk %s; test=test -n "$DISPLAY"
 x-scheme-handler/mailto; geary mailto: %s; test=test -n "$DISPLAY"
 image/bmp; gimp-2.8 %s; test=test -n "$DISPLAY"
 image/g3fax; gimp-2.8 %s; test=test -n "$DISPLAY"
@@ -446,6 +516,7 @@ application/vnd.oasis.opendocument.text-flat-xml; libreoffice %s; test=test -n "
 application/vnd.oasis.opendocument.spreadsheet-flat-xml; libreoffice %s; test=test -n "$DISPLAY"
 application/vnd.oasis.opendocument.graphics-flat-xml; libreoffice %s; test=test -n "$DISPLAY"
 application/vnd.oasis.opendocument.presentation-flat-xml; libreoffice %s; test=test -n "$DISPLAY"
+application/x-desktop; lxshortcut -i %s; test=test -n "$DISPLAY"
 application/x-meld-comparison; meld %s; test=test -n "$DISPLAY"
 text/html; midori --private %s; test=test -n "$DISPLAY"
 application/xhtml+xml; midori --private %s; test=test -n "$DISPLAY"
@@ -666,6 +737,8 @@ x-content/audio-player; rhythmbox-client --select-source %s; test=test -n "$DISP
 x-content/audio-cdda; rhythmbox-client --select-source %s; test=test -n "$DISPLAY"
 text/x-apt-sources-list; software-properties-gtk %s; test=test -n "$DISPLAY"
 text/x-apt-sources-list; software-properties-gtk %s; test=test -n "$DISPLAY"
+message/rfc822; sylpheed %s; test=test -n "$DISPLAY"
+x-scheme-handler/mailto; sylpheed %s; test=test -n "$DISPLAY"
 text/markdown; typora %s; test=test -n "$DISPLAY"
 text/x-markdown; typora %s; test=test -n "$DISPLAY"
 text/english; vim %s; needsterminal
@@ -686,6 +759,9 @@ text/x-c++; vim %s; needsterminal
 application/x-ms-dos-executable; wine start /unix %s; test=test -n "$DISPLAY"
 application/x-msi; wine start /unix %s; test=test -n "$DISPLAY"
 application/x-ms-shortcut; wine start /unix %s; test=test -n "$DISPLAY"
+application/x-cd-image; xfburn -i %s; test=test -n "$DISPLAY"
+x-content/audio-cdda; xfburn -i %s; test=test -n "$DISPLAY"
+x-content/blank-cd; xfburn -i %s; test=test -n "$DISPLAY"
 x-scheme-handler/ghelp; yelp %s; test=test -n "$DISPLAY"
 x-scheme-handler/help; yelp %s; test=test -n "$DISPLAY"
 x-scheme-handler/info; yelp %s; test=test -n "$DISPLAY"

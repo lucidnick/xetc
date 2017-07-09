@@ -1,4 +1,4 @@
-TARGETS = uuidd rsyslog unattended-upgrades laptop-mode killprocs apport binfmt-support kerneloops speech-dispatcher irqbalance i8kmon dbus thermald smartmontools single whoopsie cron acpid rsync anacron avahi-daemon bluetooth cups-browsed saned cups plymouth rc.local ondemand grub-common
+TARGETS = uuidd rsyslog unattended-upgrades laptop-mode killprocs apport binfmt-support kerneloops speech-dispatcher irqbalance i8kmon dbus thermald smartmontools single whoopsie cron acpid rsync anacron ntp avahi-daemon bluetooth lightdm cups-browsed saned cups plymouth rc.local ondemand grub-common
 INTERACTIVE =
 kerneloops: rsyslog
 speech-dispatcher: rsyslog
@@ -13,12 +13,14 @@ cron: rsyslog
 acpid: rsyslog
 rsync: rsyslog
 anacron: rsyslog
+ntp: rsyslog
 avahi-daemon: dbus rsyslog
 bluetooth: rsyslog dbus
+lightdm: dbus acpid
 cups-browsed: rsyslog
 saned: rsyslog dbus
 cups: rsyslog
-plymouth: uuidd kerneloops rsyslog unattended-upgrades speech-dispatcher irqbalance laptop-mode i8kmon avahi-daemon dbus bluetooth cups-browsed thermald saned cups smartmontools whoopsie cron acpid apport rsync anacron binfmt-support
-rc.local: uuidd kerneloops rsyslog unattended-upgrades speech-dispatcher irqbalance laptop-mode i8kmon avahi-daemon dbus bluetooth cups-browsed thermald saned cups smartmontools whoopsie cron acpid apport rsync anacron binfmt-support
-ondemand: uuidd kerneloops rsyslog unattended-upgrades speech-dispatcher irqbalance laptop-mode i8kmon avahi-daemon dbus bluetooth cups-browsed thermald saned cups smartmontools whoopsie cron acpid apport rsync anacron binfmt-support
-grub-common: uuidd kerneloops rsyslog unattended-upgrades speech-dispatcher irqbalance laptop-mode i8kmon avahi-daemon dbus bluetooth cups-browsed thermald saned cups smartmontools whoopsie cron acpid apport rsync anacron binfmt-support
+plymouth: uuidd kerneloops rsyslog unattended-upgrades speech-dispatcher irqbalance laptop-mode i8kmon avahi-daemon dbus bluetooth lightdm cups-browsed thermald saned cups smartmontools whoopsie cron acpid apport rsync anacron binfmt-support ntp
+rc.local: uuidd kerneloops rsyslog unattended-upgrades speech-dispatcher irqbalance laptop-mode i8kmon avahi-daemon dbus bluetooth lightdm cups-browsed thermald saned cups smartmontools whoopsie cron acpid apport rsync anacron binfmt-support ntp
+ondemand: uuidd kerneloops rsyslog unattended-upgrades speech-dispatcher irqbalance laptop-mode i8kmon avahi-daemon dbus bluetooth lightdm cups-browsed thermald saned cups smartmontools whoopsie cron acpid apport rsync anacron binfmt-support ntp
+grub-common: uuidd kerneloops rsyslog unattended-upgrades speech-dispatcher irqbalance laptop-mode i8kmon avahi-daemon dbus bluetooth lightdm cups-browsed thermald saned cups smartmontools whoopsie cron acpid apport rsync anacron binfmt-support ntp

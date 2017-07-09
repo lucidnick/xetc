@@ -12,7 +12,7 @@ uucp:*::
 man:*::
 proxy:*::
 kmem:*::
-dialout:*::
+dialout:*::hel
 fax:*::
 voice:*::
 cdrom:*::
@@ -68,3 +68,5 @@ sambashare:!::root
 hel:!::
 hel2:!::
 hello:!::
+lightdm:!::
+nopasswdlogin:!::
