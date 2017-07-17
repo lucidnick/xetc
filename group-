@@ -70,3 +70,4 @@ hel2:x:1004:
 hello:x:1000:
 lightdm:x:129:
 nopasswdlogin:x:130:
+ntp:x:131:
